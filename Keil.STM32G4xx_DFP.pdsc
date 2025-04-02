@@ -14,8 +14,9 @@
   </licenseSets>
 
   <releases>
-    <release version="2.0.1-dev">
+    <release version="2.0.2-dev">
       Active development ...
+      Updated documentation references
     </release>
     <release version="1.6.0" date="2024-05-03">
       Updated STM32Cube FW to STM32Cube_FW_G4_V1.5.2 (HAL V1.2.3).
@@ -1738,7 +1739,7 @@ The STM32G4xx devices have an Arm Cortex-M4 with FPU core. It has the following 
         #define CMSIS_device_header "stm32g4xx.h"
       </RTE_Components_h>
       <files>
-        <file category="doc" name="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CubeMX.md"/>
+        <file category="doc" name="https://open-cmsis-pack.github.io/cmsis-toolbox/CubeMX"/>
       </files>
     </component>
   </components>
