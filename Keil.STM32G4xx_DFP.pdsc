@@ -17,6 +17,9 @@
     <release version="2.0.2-dev">
       Active development ...
       Updated documentation references
+      Updateed Templates:
+      - Added DWARF-5 debug information
+      - Added generated output files
     </release>
     <release version="1.6.0" date="2024-05-03">
       Updated STM32Cube FW to STM32Cube_FW_G4_V1.5.2 (HAL V1.2.3).
