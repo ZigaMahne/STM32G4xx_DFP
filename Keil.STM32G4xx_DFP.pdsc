@@ -20,6 +20,9 @@
       Updateed Templates:
       - Added DWARF-5 debug information
       - Added generated output files
+      Package Description (pdsc):
+      - Shortened device family description
+      - Added Ddsp processor attribute
     </release>
     <release version="1.6.0" date="2024-05-03">
       Updated STM32Cube FW to STM32Cube_FW_G4_V1.5.2 (HAL V1.2.3).
@@ -109,19 +112,14 @@
 
   <devices>
     <family Dfamily="STM32G4 Series" Dvendor="STMicroelectronics:13">
-      <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dendian="Little-endian" Dfpu="1" Dmpu="1"/>
+      <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dendian="Little-endian" Dfpu="1" Dmpu="1" Ddsp="DSP"/>
       <book name="https://developer.arm.com/documentation/dui0553/latest/" title="Arm Cortex-M4 Generic User Guide"/>
       <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4xx Reference Manual"/>
 
         <algorithm name="CMSIS/Flash/MT25QL512ABB_STM32G474E-EVAL.FLM"    start="0x90000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
 
       <description>
-The STM32G4xx devices have an Arm Cortex-M4 with FPU core. It has the following features:
-- using an adaptive real-time accelerator (ART Accelerator) allowing 0-wait-state execution from Flash memory.
-- a frequency up to 170 MHz with 213 DMIPS,
-- including MPU and DSP instructions.
-- using 22 Kbytes of SRAM, with HW parity check implemented on the first 16 Kbytes; and  a Routine booster: 10 Kbytes of SRAM on instruction and data bus, with HW parity check (CCM SRAM).
-- communication interfaces: FDCAN, I2C, USART/UART, LPUART, SPI, SAI, USB 2.0, IRTIM, USB Type-C
+High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS at 170MHz.
       </description>
 
       <sequences>
