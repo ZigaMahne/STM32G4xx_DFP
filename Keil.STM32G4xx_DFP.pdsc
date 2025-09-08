@@ -16,6 +16,7 @@
   <releases>
     <release version="2.0.2-dev">
       Active development ...
+      Updated debug configuration files
       Updated documentation references
       Updateed Templates:
       - Added DWARF-5 debug information
@@ -519,11 +520,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G431xx"/>
         <debug svd="CMSIS/SVD/STM32G431.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -703,11 +704,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G441xx"/>
         <debug svd="CMSIS/SVD/STM32G441.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -784,11 +785,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G471xx"/>
         <debug svd="CMSIS/SVD/STM32G471.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -917,11 +918,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G473xx"/>
         <debug svd="CMSIS/SVD/STM32G473.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1122,11 +1123,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G474xx"/>
         <debug svd="CMSIS/SVD/STM32G474.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1327,11 +1328,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32g483xx"/>
         <debug svd="CMSIS/SVD/STM32G483.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1416,11 +1417,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G484xx"/>
         <debug svd="CMSIS/SVD/STM32G484.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1505,11 +1506,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G491xx"/>
         <debug svd="CMSIS/SVD/STM32G491.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
@@ -1638,11 +1639,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <compile define="STM32G4A1xx"/>
         <debug svd="CMSIS/SVD/STM32G4A1.svd"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
-          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
-          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
           __var TraceClk_Pin    = 0x00040002;   // PE2
           __var TraceD0_Pin     = 0x00040003;   // PE3
           __var TraceD1_Pin     = 0x00040004;   // PE4
