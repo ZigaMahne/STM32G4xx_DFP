@@ -16,6 +16,11 @@
   <releases>
     <release version="2.1.1-dev">
       Active development ...
+      - Added devices:
+        STM32G411xxxx, STM32G414xxxx, STM32G431CBTxZ, STM32G431RBTxZ, STM32G473RETxZ, STM32G473QETxZ, STM32G491RETxZ and STM32G491CETxZ. 
+      - Removed devices:
+        STM32G473VEIx, STM32G473VCIx, STM32G473VBIx, STM32G474VEIx, STM32G474VCIx, STM32G474VBIx, STM32G483VEIx, STM32G484VEIx
+      - Updated SVD files to version 3.1.
     </release>
     <release version="1.6.0" date="2024-05-03">
       Updated STM32Cube FW to STM32Cube_FW_G4_V1.5.2 (HAL V1.2.3).
@@ -342,7 +347,7 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
               pos = ((pin - 8) &amp; 7) * 4;
               Write32(portAdr + 0x24, ((Read32(portAdr + 0x24) &amp; ~(15 &lt;&lt; pos))                    ) );  // GPIOx_AFRH:    Alternate Function to AF0
               </block>
-            </control>
+          </control>
 
           <control if="width &gt;= 1" info="TPIU port width 1">
             <!-- configure TRACED0 -->
@@ -503,6 +508,279 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         </sequence>
       </sequences>
 
+      <!-- ************************  Subfamily 'STM32G411'  **************************** -->
+      <subFamily DsubFamily="STM32G411">
+        <processor Dclock="170000000"/>
+        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
+        <compile header="Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h" define="STM32G411xx"/>
+        <debug svd="CMSIS/SVD/STM32G431.svd"/>
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+          __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
+          __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB1_Fz2 = 0x00000002;   // DGBMCU_APB1_FZ2: Configure APB1 peripheral freeze behavior
+          __var DbgMCU_APB2_Fz  = 0x04172800;   // DGBMCU_APB2_FZ : Configure APB2 peripheral freeze behavior
+          __var TraceClk_Pin    = 0x00040002;   // PE2
+          __var TraceD0_Pin     = 0x00040003;   // PE3
+          __var TraceD1_Pin     = 0x00040004;   // PE4
+          __var TraceD2_Pin     = 0x00040005;   // PE5
+          __var TraceD3_Pin     = 0x00040006;   // PE6
+          __var DoOptionByteLoading = 0;        // Disabled
+        </debugvars>
+        <!-- ################################### 256 KB ################################## -->
+        <!-- *************************  Device 'STM32G411CC'  ***************************** -->
+        <device Dname="STM32G411CCTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x0001C000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G411CCUx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x0001C000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G411MC'  ***************************** -->
+        <device Dname="STM32G411MCTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x0001C000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+        <!-- *************************  Device 'STM32G411RC'  ***************************** -->
+        <device Dname="STM32G411RCTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x0001C000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- ################################### 128 KB ################################### -->
+        <!-- *************************  Device 'STM32G411CB'  ***************************** -->
+        <device Dname="STM32G411CBTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G411CBUx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G411KB'  ***************************** -->
+        <device Dname="STM32G411KBTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <device Dname="STM32G411KBUx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32G411RB'  ***************************** -->
+        <device Dname="STM32G411RBTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- *************************  Device 'STM32G411MB'  ***************************** -->
+        <device Dname="STM32G411MBTx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+        <!-- ################################### 64 KB ################################### -->
+        <!-- *************************  Device 'STM32G411C8'  ***************************** -->
+        <device Dname="STM32G411C8Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G411C8Ux">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G411C8'  ***************************** -->
+        <device Dname="STM32G411K8Ux">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <device Dname="STM32G411K8Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32G411M8'  ***************************** -->
+        <device Dname="STM32G411M8Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+        <!-- *************************  Device 'STM32G411R8'  ***************************** -->
+        <device Dname="STM32G411R8Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00010000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_64.FLM" start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- ################################### 32 KB ################################### -->
+        <!-- *************************  Device 'STM32G411C6'  ***************************** -->
+        <device Dname="STM32G411C6Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G411C6Ux">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G411K6'  ***************************** -->
+        <device Dname="STM32G411K6Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <device Dname="STM32G411K6Ux">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="32"/>
+        </device>
+        <!-- *************************  Device 'STM32G411M6'  ***************************** -->
+        <device Dname="STM32G411M6Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+        <!-- *************************  Device 'STM32G411R6'  ***************************** -->
+        <device Dname="STM32G411R6Tx">
+          <memory name="SRAM" access="rwx" start="0x20000000" size="0x00008000" init="0" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G4xx_SB_OPT.FLM" start="0x1FFF7800" size="0x00000018" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00008000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_32.FLM" start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32G414'  **************************** -->
+      <subFamily DsubFamily="STM32G414">
+        <processor Dclock="170000000"/>
+        <book name="Documentation/DS12288.pdf" title="STM32G414xx Data Sheet"/>
+        <compile header="Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h" define="STM32G414xx"/>
+        <debug svd="CMSIS/SVD/STM32G474.svd"/>
+        <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
+          __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
+          __var DbgMCU_APB1_Fz1 = 0x00000000;   // DGBMCU_APB1_FZ1: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB1_Fz2 = 0x00000000;   // DGBMCU_APB1_FZ2: All Peripherals Operate as in Normal Mode
+          __var DbgMCU_APB2_Fz  = 0x00000000;   // DGBMCU_APB2_FZ: All Peripherals Operate as in Normal Mode
+          __var TraceClk_Pin    = 0x00040002;   // PE2
+          __var TraceD0_Pin     = 0x00040003;   // PE3
+          __var TraceD1_Pin     = 0x00040004;   // PE4
+          __var TraceD2_Pin     = 0x00040005;   // PE5
+          __var TraceD3_Pin     = 0x00040006;   // PE6
+          __var DoOptionByteLoading = 0;        // Disabled
+        </debugvars>
+        <memory name="SRAM" access="rwx" start="0x20000000" size="0x00020000" init="0" default="1"/>
+        <algorithm name="CMSIS/Flash/STM32G4xx_DB_OPT.FLM" start="0x1FFF7800" size="0x00000054" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
+        <!-- ################################### 256 KB ################################## -->
+        <!-- *************************  Device 'STM32G414CC'  ***************************** -->
+        <device Dname="STM32G414CCTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G414CCUx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G474MC'  ***************************** -->
+        <device Dname="STM32G414MCTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+        <!-- *************************  Device 'STM32G414RC'  ***************************** -->
+        <device Dname="STM32G414RCTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <!-- *************************  Device 'STM32G474VC'  ***************************** -->
+        <device Dname="STM32G414VCTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00040000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="100"/>
+        </device>
+        <!-- #################################### 128 KB ################################## -->
+        <!-- *************************  Device 'STM32G414CB'  ***************************** -->
+        <device Dname="STM32G414CBTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <device Dname="STM32G414CBUx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
+        <!-- *************************  Device 'STM32G414RB'  ***************************** -->
+        <device Dname="STM32G414RBTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
+        <device Dname="STM32G414VBTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="100"/>
+        </device>
+        <!-- *************************  Device 'STM32G414MB'  ***************************** -->
+        <device Dname="STM32G414MBTx">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x00020000" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="80"/>
+        </device>
+      </subFamily>
       <!-- ************************  Subfamily 'STM32G431'  **************************** -->
       <subFamily DsubFamily="STM32G431">
         <processor Dclock="170000000"/>
@@ -545,6 +823,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="49"/>
         </device>
+        <device Dname="STM32G431CBTxZ">
+          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x0001C000" startup="1" default="1" />
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
+          <feature type="CSP" n="49"/>
+        </device>
 
         <!-- *************************  Device 'STM32G431KB'  ***************************** -->
         <device Dname="STM32G431KBTx">
@@ -568,6 +851,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00020000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="64"/>
+        </device>
+        <device Dname="STM32G431RBTxZ">
+          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x0001C000" startup="1" default="1" />
+          <algorithm name="CMSIS/Flash/STM32G43x-4x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
+          <feature type="QFP" n="64"/>
         </device>
 
         <!-- *************************  Device 'STM32G431VB'  ***************************** -->
@@ -957,6 +1245,12 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="64"/>
         </device>
+        <device Dname="STM32G473RETxZ">
+          <memory name="FLASH_Bank1" access="rx"             start="0x08000000" size="0x0003BFFF" default="1" startup="1"/>
+          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
 
         <!-- *************************  Device 'STM32G473VE'  ***************************** -->
         <device Dname="STM32G473VETx">
@@ -969,16 +1263,17 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
-        <device Dname="STM32G473VEIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
 
         <!-- *************************  Device 'STM32G473QE'  ***************************** -->
         <device Dname="STM32G473QETx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
+          <feature type="QFP" n="128"/>
+        </device>
+        <device Dname="STM32G473QETxZ">
+          <memory name="FLASH_Bank1" access="rx"             start="0x08000000" size="0x0003BFFF" default="1" startup="1"/>
+          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="1"/>
+          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
           <feature type="QFP" n="128"/>
         </device>
 
@@ -1034,11 +1329,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
-        <device Dname="STM32G473VCIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00040000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
 
         <!-- *************************  Device 'STM32G473PC'  ***************************** -->
         <device Dname="STM32G473PCIx">
@@ -1088,11 +1378,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32G473VBHx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00020000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
-        <device Dname="STM32G473VBIx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00020000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
@@ -1158,11 +1443,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <feature type="QFP" n="100"/>
         </device>
         <device Dname="STM32G474VEHx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
-        <device Dname="STM32G474VEIx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
@@ -1239,11 +1519,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
-        <device Dname="STM32G474VCIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00040000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_256.FLM" start="0x08000000" size="0x00040000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
 
         <!-- *************************  Device 'STM32G474PC'  ***************************** -->
         <device Dname="STM32G474PCIx">
@@ -1275,11 +1550,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         <!-- *************************  Device 'STM32G474VB'  ***************************** -->
         <device Dname="STM32G474VBHx">
          <memory name="Main_Flash" access="rx"                    start="0x08000000" size="0x00020000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
-        <device Dname="STM32G474VBIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00020000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G47x-8x_128.FLM" start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
@@ -1379,11 +1649,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="BGA" n="100"/>
         </device>
-        <device Dname="STM32G483VEIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
 
         <!-- *************************  Device 'STM32G483QE'  ***************************** -->
         <device Dname="STM32G483QETx">
@@ -1451,11 +1716,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="100"/>
         </device>
-        <device Dname="STM32G484VEIx">
-          <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
-          <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
-          <feature type="BGA" n="100"/>
-        </device>
         <device Dname="STM32G484VEHx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
@@ -1521,6 +1781,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G49x-Ax_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="QFP" n="48"/>
         </device>
+        <device Dname="STM32G491CETxZ">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x0007BFFF" default="1" startup="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="48"/>
+        </device>
         <device Dname="STM32G491CEUx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
           <algorithm name="CMSIS/Flash/STM32G49x-Ax_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
@@ -1562,7 +1827,11 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
           <algorithm name="CMSIS/Flash/STM32G49x-Ax_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1" />
           <feature type="CSP" n="64"/>
         </device>
-
+        <device Dname="STM32G491RETxZ">
+          <memory name="Main_Flash" access="rx" start="0x08000000" size="0x0007BFFF" startup="1" default="1"/>
+          <algorithm name="CMSIS/Flash/STM32G49x-Ax_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
+          <feature type="QFP" n="64"/>
+        </device>
         <!-- *************************  Device 'STM32G491VE'  ***************************** -->
         <device Dname="STM32G491VETx">
           <memory name="Main_Flash" access="rx"              start="0x08000000" size="0x00080000" default="1" startup="1" />
