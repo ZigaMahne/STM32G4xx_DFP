@@ -113,9 +113,7 @@
       <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dendian="Little-endian" Dfpu="1" Dmpu="1" Ddsp="DSP"/>
       <book name="https://developer.arm.com/documentation/dui0553/latest/" title="Arm Cortex-M4 Generic User Guide"/>
       <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4xx Reference Manual"/>
-
-        <algorithm name="CMSIS/Flash/MT25QL512ABB_STM32G474E-EVAL.FLM"    start="0x90000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
-
+      <algorithm name="CMSIS/Flash/MT25QL512ABB_STM32G474E-EVAL.FLM"    start="0x90000000" size="0x08000000" RAMstart="0x20000000" RAMsize="0xA0000" default="0" />
       <description>
 High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS at 170MHz.
       </description>
@@ -511,7 +509,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G411'  **************************** -->
       <subFamily DsubFamily="STM32G411">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <compile define="STM32G411xx"/>
         <debug svd="CMSIS/SVD/STM32G431.svd"/>
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
@@ -704,7 +701,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G414'  **************************** -->
       <subFamily DsubFamily="STM32G414">
         <processor Dclock="170000000"/>
-        <book name="Documentation/DS12288.pdf" title="STM32G414xx Data Sheet"/>
         <compile define="STM32G414xx"/>
         <debug svd="CMSIS/SVD/STM32G474.svd"/>
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
@@ -784,12 +780,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G431'  **************************** -->
       <subFamily DsubFamily="STM32G431">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g431c6.pdf" title="STM32G431xx Data Sheet"/>
-
         <compile define="STM32G431xx"/>
         <debug svd="CMSIS/SVD/STM32G431.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -978,12 +971,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G441'  **************************** -->
       <subFamily DsubFamily="STM32G441">
         <processor Dclock="150000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>        
         <book name="https://www.st.com/resource/en/datasheet/stm32g441cb.pdf" title="STM32G441xx Data Sheet"/>
-
         <compile define="STM32G441xx"/>
         <debug svd="CMSIS/SVD/STM32G441.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1060,11 +1050,8 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G471'  **************************** -->
       <subFamily DsubFamily="STM32G471">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
-
         <compile define="STM32G471xx"/>
         <debug svd="CMSIS/SVD/STM32G471.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1192,12 +1179,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G473'  **************************** -->
       <subFamily DsubFamily="STM32G473">
         <processor Dclock="150000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g473cb.pdf" title="STM32G473xx Data Sheet"/>
-
         <compile define="STM32G473xx"/>
         <debug svd="CMSIS/SVD/STM32G473.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1394,12 +1378,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G474'  **************************** -->
       <subFamily DsubFamily="STM32G474">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g474cb.pdf" title="STM32G474xx Data Sheet"/>
-
         <compile define="STM32G474xx"/>
         <debug svd="CMSIS/SVD/STM32G474.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1584,12 +1565,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G483'  **************************** -->
       <subFamily DsubFamily="STM32G483">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g483ce.pdf" title="STM32G483xx Data Sheet"/>
-
         <compile define="STM32g483xx"/>
         <debug svd="CMSIS/SVD/STM32G483.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1668,12 +1646,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G484'  **************************** -->
       <subFamily DsubFamily="STM32G484">
         <processor Dclock="150000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g484ce.pdf" title="STM32G484xx Data Sheet"/>
-
         <compile define="STM32G484xx"/>
         <debug svd="CMSIS/SVD/STM32G484.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1752,12 +1727,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G491'  **************************** -->
       <subFamily DsubFamily="STM32G491">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g491cc.pdf" title="STM32G491xx Data Sheet"/>
-
         <compile define="STM32G491xx"/>
         <debug svd="CMSIS/SVD/STM32G491.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -1894,12 +1866,9 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <!-- ************************  Subfamily 'STM32G4A1'  **************************** -->
       <subFamily DsubFamily="STM32G4A1">
         <processor Dclock="170000000"/>
-        <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g4a1ce.pdf" title="STM32G4A1xE Data Sheet"/>
-
         <compile define="STM32G4A1xx"/>
         <debug svd="CMSIS/SVD/STM32G4A1.svd"/>
-
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf" version="1.0.1">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
           __var DbgMCU_APB1_Fz1 = 0xC060183F;   // DGBMCU_APB1_FZ1: Configure APB1 peripheral freeze behavior
@@ -2015,4 +1984,5 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
 
   </csolution>
 </package>
+
 
