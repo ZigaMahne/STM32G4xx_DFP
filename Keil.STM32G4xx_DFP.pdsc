@@ -1231,7 +1231,7 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         </device>
         <device Dname="STM32G473RETxZ">
           <memory name="FLASH_Bank1" access="rx"             start="0x08000000" size="0x0003BFFF" default="1" startup="1"/>
-          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="1"/>
+          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="0"/>
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
           <feature type="QFP" n="64"/>
         </device>
@@ -1256,7 +1256,7 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
         </device>
         <device Dname="STM32G473QETxZ">
           <memory name="FLASH_Bank1" access="rx"             start="0x08000000" size="0x0003BFFF" default="1" startup="1"/>
-          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="1"/>
+          <memory name="FLASH_Bank2" access="rx"             start="0x08040000" size="0x0003BFFF" default="1" startup="0"/>
           <algorithm name="CMSIS/Flash/STM32G47x-8x_512.FLM" start="0x08000000" size="0x00080000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
           <feature type="QFP" n="128"/>
         </device>
@@ -1984,5 +1984,6 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
 
   </csolution>
 </package>
+
 
 
