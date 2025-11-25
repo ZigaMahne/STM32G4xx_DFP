@@ -512,7 +512,7 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <subFamily DsubFamily="STM32G411">
         <processor Dclock="170000000"/>
         <book name="https://www.st.com/resource/en/reference_manual/rm0440-stm32g4-series-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G4 Reference Manual"/>
-        <compile header="Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h" define="STM32G411xx"/>
+        <compile define="STM32G411xx"/>
         <debug svd="CMSIS/SVD/STM32G431.svd"/>
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
@@ -705,7 +705,7 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
       <subFamily DsubFamily="STM32G414">
         <processor Dclock="170000000"/>
         <book name="Documentation/DS12288.pdf" title="STM32G414xx Data Sheet"/>
-        <compile header="Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h" define="STM32G414xx"/>
+        <compile define="STM32G414xx"/>
         <debug svd="CMSIS/SVD/STM32G474.svd"/>
         <debugvars configfile="CMSIS/Debug/STM32G4xx.dbgconf">
           __var DbgMCU_CR       = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
@@ -2015,3 +2015,4 @@ High-performance STM32G4 MCUs with Arm Cortex-M4 core, MPU, DSP, FPU, 213 DMIPS 
 
   </csolution>
 </package>
+
